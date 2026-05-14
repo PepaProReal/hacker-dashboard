@@ -5,64 +5,80 @@
     <title>Hacker Dashboard</title>
     <style>
         body { background-color: #0d0d0d; color: #00ff41; font-family: 'Courier New', Courier, monospace; margin: 0; display: flex; }
-        nav { width: 200px; height: 100vh; border-right: 2px solid #00ff41; padding: 20px; }
+        nav { width: 220px; height: 100vh; border-right: 2px solid #00ff41; padding: 20px; }
         nav h2 { font-size: 1.2em; border-bottom: 1px solid #00ff41; padding-bottom: 10px; }
         nav ul { list-style: none; padding: 0; }
         nav li { margin: 15px 0; cursor: pointer; color: #00ff41; font-weight: bold; }
         nav li:hover { color: #fff; text-decoration: underline; }
+        
+        /* Language Switcher */
+        .lang-btn { cursor: pointer; color: #ff9900; font-weight: bold; margin-right: 5px; }
+        
         main { padding: 40px; width: 100%; max-width: 800px; }
         .section { display: none; }
         .active { display: block; }
         .info-box { border: 1px solid #444; padding: 20px; margin: 10px 0; background: #111; line-height: 1.6; }
-        h3 { color: #fff; border-bottom: 1px solid #555; padding-bottom: 5px; margin-top: 20px; }
-        code { background: #1a1a1a; padding: 10px; color: #ff9900; display: block; margin: 10px 0; border-left: 3px solid #ff9900; }
+        
+        /* Language Visibility */
+        .lang-en { display: none; }
     </style>
 </head>
 <body>
 
     <nav>
         <h2>MENU</h2>
+        <div>
+            <span class="lang-btn" onclick="setLang('cz')">[ CZ ]</span>
+            <span class="lang-btn" onclick="setLang('en')">[ EN ]</span>
+        </div>
         <ul>
             <li onclick="showSection('home')">> HOME</li>
-            <li onclick="showSection('hack')">> HACK (Znalosti)</li>
+            <li onclick="showSection('hack')">> HACK (Knowledge)</li>
             <li onclick="showSection('ctf')">> CTF</li>
         </ul>
     </nav>
 
     <main>
         <div id="home" class="section active">
-            <h1>> VÍTEJ V SYSTÉMU</h1>
-            <p>Moje digitální portfolio a znalostní báze.</p>
+            <h1 class="lang-cz">> VÍTEJ V SYSTÉMU</h1>
+            <h1 class="lang-en">> SYSTEM WELCOME</h1>
+            <p class="lang-cz">Moje digitální portfolio a znalostní báze.</p>
+            <p class="lang-en">My digital portfolio and knowledge base.</p>
         </div>
 
         <div id="hack" class="section">
-            <h1>> ZNALOSTNÍ BÁZE</h1>
+            <h1 class="lang-cz">> ZNALOSTNÍ BÁZE</h1>
+            <h1 class="lang-en">> KNOWLEDGE BASE</h1>
             
             <div class="info-box">
-                <h3>1. Rozdíl mezi IP a MAC (Navigace)</h3>
-                <p><strong>IP adresa (Logická):</strong> Jako adresa bytu. Může se měnit. Musím vědět, kde v síti jsem (např. 192.168.x.x je soukromá síť). Cíl hackera: dostat se z veřejného internetu dovnitř.</p>
-                <p><strong>MAC adresa (Fyzická):</strong> Jako rodné číslo/otisk prstu. Vypáleno v hardwaru.</p>
-                <p><strong>Proč to řešit:</strong> <em>MAC Spoofing</em> – obejdu tím filtry a firewally, když se vydávám za někoho autorizovaného.</p>
+                <h3><span class="lang-cz">1. Rozdíl IP a MAC</span><span class="lang-en">1. IP vs MAC Difference</span></h3>
+                <p class="lang-cz"><strong>IP (Logická):</strong> Adresa bytu. Může se měnit. <em>Proč:</em> Chci vědět, kde v síti jsem.</p>
+                <p class="lang-en"><strong>IP (Logical):</strong> Like an apartment address. Can change. <em>Why:</em> I need to know where I am in the network.</p>
+                
+                <p class="lang-cz"><strong>MAC (Fyzická):</strong> Otisk prstu. Vypáleno v hardwaru. <em>Trik:</em> MAC Spoofing – obejdu filtry.</p>
+                <p class="lang-en"><strong>MAC (Physical):</strong> Fingerprint. Burned into hardware. <em>Trick:</em> MAC Spoofing – I bypass filters.</p>
             </div>
 
             <div class="info-box">
-                <h3>2. IPv4 vs. IPv6 (Příležitost)</h3>
-                <p><strong>IPv4:</strong> Staré, adresy došly.</p>
-                <p><strong>IPv6:</strong> Nové, nekonečno adres. <em>Příležitost:</em> Většina lidí IPv6 zabezpečit neumí. Kdo se to naučí, má v budoucnu víc práce a víc peněz.</p>
+                <h3><span class="lang-cz">2. IPv4 vs. IPv6</span><span class="lang-en">2. IPv4 vs. IPv6</span></h3>
+                <p class="lang-cz"><strong>IPv4:</strong> Staré, adresy došly.</p>
+                <p class="lang-en"><strong>IPv4:</strong> Old, addresses ran out.</p>
+                <p class="lang-cz"><strong>IPv6:</strong> Nekonečno adres. <em>Příležitost:</em> Nikdo to neumí zabezpečit, tam jsou peníze.</p>
+                <p class="lang-en"><strong>IPv6:</strong> Infinite addresses. <em>Opportunity:</em> Nobody knows how to secure it, that's where the money is.</p>
             </div>
 
             <div class="info-box">
-                <h3>3. Hacking jako LEGO</h3>
-                <p>Když znám dílky (IP, MAC, protokoly), vím, jak je spojit a postavit z nich <strong>exploit</strong>. Když je neznám, jen slepě kopíruju příkazy a jakmile se něco změní, končím.</p>
+                <h3><span class="lang-cz">3. Hacking jako LEGO</span><span class="lang-en">3. Hacking as LEGO</span></h3>
+                <p class="lang-cz">Znám dílky = postavím exploit. Neznám = končím u kopírování návodů.</p>
+                <p class="lang-en">Know the pieces = I build an exploit. Don't know = I just copy-paste tutorials.</p>
             </div>
-
-            <h3>TRIK: MAC Spoofing</h3>
-            <code>sudo ifconfig eth0 hw ether 00:11:22:33:44:55</code>
         </div>
 
         <div id="ctf" class="section">
-            <h1>> CTF ZÁPISKY</h1>
-            <p>Tady budu přidávat své úspěchy z TryHackMe.</p>
+            <h1 class="lang-cz">> CTF ZÁPISKY</h1>
+            <h1 class="lang-en">> CTF NOTES</h1>
+            <p class="lang-cz">Tady budu přidávat své úspěchy.</p>
+            <p class="lang-en">I will add my achievements here.</p>
         </div>
     </main>
 
@@ -70,6 +86,19 @@
         function showSection(id) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
+        }
+
+        function setLang(lang) {
+            const czElements = document.querySelectorAll('.lang-cz');
+            const enElements = document.querySelectorAll('.lang-en');
+            
+            if (lang === 'cz') {
+                czElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+            } else {
+                czElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+            }
         }
     </script>
 </body>
