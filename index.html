@@ -11,15 +11,12 @@
         nav li { margin: 15px 0; cursor: pointer; color: #00ff41; font-weight: bold; }
         nav li:hover { color: #fff; text-decoration: underline; }
         
-        /* Language Switcher */
         .lang-btn { cursor: pointer; color: #ff9900; font-weight: bold; margin-right: 5px; }
-        
         main { padding: 40px; width: 100%; max-width: 800px; }
         .section { display: none; }
         .active { display: block; }
         .info-box { border: 1px solid #444; padding: 20px; margin: 10px 0; background: #111; line-height: 1.6; }
-        
-        /* Language Visibility */
+        h3 { color: #fff; border-bottom: 1px solid #555; padding-bottom: 5px; }
         .lang-en { display: none; }
     </style>
 </head>
@@ -42,35 +39,38 @@
         <div id="home" class="section active">
             <h1 class="lang-cz">> VÍTEJ V SYSTÉMU</h1>
             <h1 class="lang-en">> SYSTEM WELCOME</h1>
-            <p class="lang-cz">Moje digitální portfolio a znalostní báze.</p>
-            <p class="lang-en">My digital portfolio and knowledge base.</p>
+            <p class="lang-cz">Tady buduju svou cestu do IT a kyberbezpečnosti.</p>
+            <p class="lang-en">Building my path into IT and cybersecurity.</p>
         </div>
 
         <div id="hack" class="section">
-            <h1 class="lang-cz">> ZNALOSTNÍ BÁZE</h1>
-            <h1 class="lang-en">> KNOWLEDGE BASE</h1>
+            <h1>> HACKING MODUL</h1>
             
             <div class="info-box">
-                <h3><span class="lang-cz">1. Rozdíl IP a MAC</span><span class="lang-en">1. IP vs MAC Difference</span></h3>
-                <p class="lang-cz"><strong>IP (Logická):</strong> Adresa bytu. Může se měnit. <em>Proč:</em> Chci vědět, kde v síti jsem.</p>
-                <p class="lang-en"><strong>IP (Logical):</strong> Like an apartment address. Can change. <em>Why:</em> I need to know where I am in the network.</p>
+                <h3>1. Rozdíl mezi IP a MAC (Tvoje „Navigace“)</h3>
+                <p class="lang-cz"><strong>IP adresa (Logická adresa):</strong> Je to jako tvoje adresa bytu. Může se měnit (když se přestěhuješ nebo se restartuje router).<br>
+                <em>Proč tě to zajímá:</em> Musíš vědět, kde v síti se nacházíš. Když jsi v „soukromé síti“ (např. 192.168.x.x), jsi uvnitř. Cílem hackera je často dostat se z veřejného internetu do té soukromé sítě k serverům, které nejsou vidět zvenku.</p>
+                <p class="lang-en"><strong>IP address (Logical):</strong> Like your home address. It changes (when you move or restart the router).<br>
+                <em>Why it matters:</em> You need to know where you are in the network. If you are in a "private network" (e.g., 192.168.x.x), you are inside. A hacker's goal is often to get from the public internet into the private network to reach servers hidden from the outside.</p>
                 
-                <p class="lang-cz"><strong>MAC (Fyzická):</strong> Otisk prstu. Vypáleno v hardwaru. <em>Trik:</em> MAC Spoofing – obejdu filtry.</p>
-                <p class="lang-en"><strong>MAC (Physical):</strong> Fingerprint. Burned into hardware. <em>Trick:</em> MAC Spoofing – I bypass filters.</p>
+                <p class="lang-cz"><strong>MAC adresa (Fyzická adresa):</strong> Je to jako tvoje rodné číslo nebo otisk prstu. Je to vypálené do hardwaru.<br>
+                <em>Proč tě to zajímá:</em> MAC Spoofing. Když tě síť (třeba hotelová Wi-Fi) nepustí dál, protože jsi nezaplatil, nebo tě blokuje firewall, „podvrhneš“ (spoofneš) MAC adresu někoho, kdo už přístup má. Tím se staneš „neviditelným“ nebo „autorizovaným“. Je to základní trik pro obcházení fyzických přístupů.</p>
+                <p class="lang-en"><strong>MAC address (Physical):</strong> Like your ID number/fingerprint. Burned into hardware.<br>
+                <em>Why it matters:</em> MAC Spoofing. If a network (like hotel Wi-Fi) blocks you because you didn't pay, or a firewall blocks you, you "spoof" the MAC address of someone who already has access. You become invisible/authorized. It's a basic trick to bypass physical access controls.</p>
             </div>
 
             <div class="info-box">
-                <h3><span class="lang-cz">2. IPv4 vs. IPv6</span><span class="lang-en">2. IPv4 vs. IPv6</span></h3>
-                <p class="lang-cz"><strong>IPv4:</strong> Staré, adresy došly.</p>
-                <p class="lang-en"><strong>IPv4:</strong> Old, addresses ran out.</p>
-                <p class="lang-cz"><strong>IPv6:</strong> Nekonečno adres. <em>Příležitost:</em> Nikdo to neumí zabezpečit, tam jsou peníze.</p>
-                <p class="lang-en"><strong>IPv6:</strong> Infinite addresses. <em>Opportunity:</em> Nobody knows how to secure it, that's where the money is.</p>
+                <h3>2. IPv4 vs. IPv6 (Tvoje „Příležitost“)</h3>
+                <p class="lang-cz"><strong>IPv4</strong> je staré a adresy došly. <strong>IPv6</strong> je nové a adres je tam nekonečno.<br>
+                <em>Proč tě to zajímá:</em> Většina „starých“ hackerů umí hackovat jen IPv4. Sítě na IPv6 jsou často mizerně zabezpečené, protože se v nich lidé nevyznají. Kdo se naučí bezpečnost IPv6, bude mít v budoucnu víc práce a víc peněz, protože to bude vzácná dovednost.</p>
+                <p class="lang-en"><strong>IPv4</strong> is old and addresses ran out. <strong>IPv6</strong> is new and has infinite addresses.<br>
+                <em>Why it matters:</em> Most "old-school" hackers only know how to hack IPv4. IPv6 networks are often poorly secured because people don't understand them. Those who learn IPv6 security will have more work and money in the future, as it's a rare skill.</p>
             </div>
 
             <div class="info-box">
-                <h3><span class="lang-cz">3. Hacking jako LEGO</span><span class="lang-en">3. Hacking as LEGO</span></h3>
-                <p class="lang-cz">Znám dílky = postavím exploit. Neznám = končím u kopírování návodů.</p>
-                <p class="lang-en">Know the pieces = I build an exploit. Don't know = I just copy-paste tutorials.</p>
+                <h3>3. Proč to celé nečíst jako učebnici?</h3>
+                <p class="lang-cz">Hacking je jako stavebnice LEGO. Když znáš dílky (IP, MAC, protokoly), víš, jak je spojit dohromady a postavit z nich „zbraň“ (exploit). Když je neznáš, budeš jen slepě kopírovat příkazy z internetu. A jakmile narazíš na něco, co není přesně podle návodu, skončíš.</p>
+                <p class="lang-en">Hacking is like LEGO. When you know the pieces (IP, MAC, protocols), you know how to connect them to build a "weapon" (exploit). If you don't know them, you will just blindly copy commands from the internet. And once you encounter something that isn't exactly as the tutorial says, you're done.</p>
             </div>
         </div>
 
@@ -78,7 +78,7 @@
             <h1 class="lang-cz">> CTF ZÁPISKY</h1>
             <h1 class="lang-en">> CTF NOTES</h1>
             <p class="lang-cz">Tady budu přidávat své úspěchy.</p>
-            <p class="lang-en">I will add my achievements here.</p>
+            <p class="lang-en">Achievements will be added here.</p>
         </div>
     </main>
 
@@ -89,16 +89,10 @@
         }
 
         function setLang(lang) {
-            const czElements = document.querySelectorAll('.lang-cz');
-            const enElements = document.querySelectorAll('.lang-en');
-            
-            if (lang === 'cz') {
-                czElements.forEach(el => el.style.display = 'block');
-                enElements.forEach(el => el.style.display = 'none');
-            } else {
-                czElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
-            }
+            const cz = document.querySelectorAll('.lang-cz');
+            const en = document.querySelectorAll('.lang-en');
+            if (lang === 'cz') { cz.forEach(e => e.style.display = 'block'); en.forEach(e => e.style.display = 'none'); }
+            else { cz.forEach(e => e.style.display = 'none'); en.forEach(e => e.style.display = 'block'); }
         }
     </script>
 </body>
