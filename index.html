@@ -10,11 +10,12 @@
         nav ul { list-style: none; padding: 0; }
         nav li { margin: 15px 0; cursor: pointer; color: #00ff41; font-weight: bold; }
         nav li:hover { color: #fff; text-decoration: underline; }
-        main { padding: 40px; width: 100%; }
+        main { padding: 40px; width: 100%; max-width: 800px; }
         .section { display: none; }
         .active { display: block; }
-        code { background: #1a1a1a; padding: 5px; color: #ff9900; display: block; margin: 10px 0; border-left: 3px solid #ff9900; }
-        .info-box { border: 1px solid #444; padding: 15px; margin: 10px 0; background: #111; }
+        .info-box { border: 1px solid #444; padding: 20px; margin: 10px 0; background: #111; line-height: 1.6; }
+        h3 { color: #fff; border-bottom: 1px solid #555; padding-bottom: 5px; margin-top: 20px; }
+        code { background: #1a1a1a; padding: 10px; color: #ff9900; display: block; margin: 10px 0; border-left: 3px solid #ff9900; }
     </style>
 </head>
 <body>
@@ -25,42 +26,43 @@
             <li onclick="showSection('home')">> HOME</li>
             <li onclick="showSection('hack')">> HACK (Znalosti)</li>
             <li onclick="showSection('ctf')">> CTF</li>
-            <li onclick="showSection('scripts')">> SCRIPTS</li>
         </ul>
     </nav>
 
     <main>
         <div id="home" class="section active">
             <h1>> VÍTEJ V SYSTÉMU</h1>
-            <p>Tady buduju svou cestu do IT a kyberbezpečnosti.</p>
+            <p>Moje digitální portfolio a znalostní báze.</p>
         </div>
 
         <div id="hack" class="section">
-            <h1>> HACKING MODUL</h1>
+            <h1>> ZNALOSTNÍ BÁZE</h1>
             
             <div class="info-box">
-                <h3>ZNALOSTNÍ BÁZE: SÍTĚ</h3>
-                <p><b>IP Adresa (Internet Protocol):</b> Moje "dočasná" adresa v síti. Může se měnit.<br>
-                - IPv4: Starší, 4 sekce čísel (došly!).<br>
-                - IPv6: Nová, delší, adres je nekonečno.</p>
-                
-                <p><b>MAC Adresa:</b> Můj "otisk prstu" (ID karty). Dané výrobcem, unikátní.</p>
+                <h3>1. Rozdíl mezi IP a MAC (Navigace)</h3>
+                <p><strong>IP adresa (Logická):</strong> Jako adresa bytu. Může se měnit. Musím vědět, kde v síti jsem (např. 192.168.x.x je soukromá síť). Cíl hackera: dostat se z veřejného internetu dovnitř.</p>
+                <p><strong>MAC adresa (Fyzická):</strong> Jako rodné číslo/otisk prstu. Vypáleno v hardwaru.</p>
+                <p><strong>Proč to řešit:</strong> <em>MAC Spoofing</em> – obejdu tím filtry a firewally, když se vydávám za někoho autorizovaného.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>2. IPv4 vs. IPv6 (Příležitost)</h3>
+                <p><strong>IPv4:</strong> Staré, adresy došly.</p>
+                <p><strong>IPv6:</strong> Nové, nekonečno adres. <em>Příležitost:</em> Většina lidí IPv6 zabezpečit neumí. Kdo se to naučí, má v budoucnu víc práce a víc peněz.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>3. Hacking jako LEGO</h3>
+                <p>Když znám dílky (IP, MAC, protokoly), vím, jak je spojit a postavit z nich <strong>exploit</strong>. Když je neznám, jen slepě kopíruju příkazy a jakmile se něco změní, končím.</p>
             </div>
 
             <h3>TRIK: MAC Spoofing</h3>
-            <p>Když mi síť nechce dát přístup, "podvrhnu" svoji MAC adresu tak, aby si systém myslel, že jsem někdo jiný.</p>
             <code>sudo ifconfig eth0 hw ether 00:11:22:33:44:55</code>
         </div>
 
         <div id="ctf" class="section">
             <h1>> CTF ZÁPISKY</h1>
-            <p>Moje postupy v TryHackMe:</p>
-            <p>- <b>Pre-Security:</b> Pochopil jsem rozdíl mezi IP a MAC.</p>
-        </div>
-
-        <div id="scripts" class="section">
-            <h1>> MOJE SCRIPTY</h1>
-            <p>Zde brzy přidám své první automatizační nástroje.</p>
+            <p>Tady budu přidávat své úspěchy z TryHackMe.</p>
         </div>
     </main>
 
