@@ -31,6 +31,7 @@
         <ul>
             <li onclick="showSection('home')">> HOME</li>
             <li onclick="showSection('hack')">> HACK (Knowledge)</li>
+            <li onclick="showSection('tools')">> TOOLS (OSINT)</li>
             <li onclick="showSection('ctf')">> CTF</li>
         </ul>
     </nav>
@@ -39,46 +40,38 @@
         <div id="home" class="section active">
             <h1 class="lang-cz">> VÍTEJ V SYSTÉMU</h1>
             <h1 class="lang-en">> SYSTEM WELCOME</h1>
-            <p class="lang-cz">Tady buduju svou cestu do IT a kyberbezpečnosti.</p>
-            <p class="lang-en">Building my path into IT and cybersecurity.</p>
         </div>
 
         <div id="hack" class="section">
             <h1>> HACKING MODUL</h1>
+            <div class="info-box">
+                <h3>1. Rozdíl mezi IP a MAC</h3>
+                <p class="lang-cz"><strong>IP:</strong> Logická adresa (jako adresa bytu). <br><strong>MAC:</strong> Fyzická adresa (otisk prstu). <em>Trik:</em> MAC Spoofing.</p>
+                <p class="lang-en"><strong>IP:</strong> Logical address (like a home address). <br><strong>MAC:</strong> Physical address (fingerprint). <em>Trick:</em> MAC Spoofing.</p>
+            </div>
+        </div>
+
+        <!-- NOVÁ SEKCE -->
+        <div id="tools" class="section">
+            <h1 class="lang-cz">> NÁSTROJE (OSINT & ANALÝZA)</h1>
+            <h1 class="lang-en">> TOOLS (OSINT & ANALYSIS)</h1>
             
             <div class="info-box">
-                <h3>1. Rozdíl mezi IP a MAC (Tvoje „Navigace“)</h3>
-                <p class="lang-cz"><strong>IP adresa (Logická adresa):</strong> Je to jako tvoje adresa bytu. Může se měnit (když se přestěhuješ nebo se restartuje router).<br>
-                <em>Proč tě to zajímá:</em> Musíš vědět, kde v síti se nacházíš. Když jsi v „soukromé síti“ (např. 192.168.x.x), jsi uvnitř. Cílem hackera je často dostat se z veřejného internetu do té soukromé sítě k serverům, které nejsou vidět zvenku.</p>
-                <p class="lang-en"><strong>IP address (Logical):</strong> Like your home address. It changes (when you move or restart the router).<br>
-                <em>Why it matters:</em> You need to know where you are in the network. If you are in a "private network" (e.g., 192.168.x.x), you are inside. A hacker's goal is often to get from the public internet into the private network to reach servers hidden from the outside.</p>
-                
-                <p class="lang-cz"><strong>MAC adresa (Fyzická adresa):</strong> Je to jako tvoje rodné číslo nebo otisk prstu. Je to vypálené do hardwaru.<br>
-                <em>Proč tě to zajímá:</em> MAC Spoofing. Když tě síť (třeba hotelová Wi-Fi) nepustí dál, protože jsi nezaplatil, nebo tě blokuje firewall, „podvrhneš“ (spoofneš) MAC adresu někoho, kdo už přístup má. Tím se staneš „neviditelným“ nebo „autorizovaným“. Je to základní trik pro obcházení fyzických přístupů.</p>
-                <p class="lang-en"><strong>MAC address (Physical):</strong> Like your ID number/fingerprint. Burned into hardware.<br>
-                <em>Why it matters:</em> MAC Spoofing. If a network (like hotel Wi-Fi) blocks you because you didn't pay, or a firewall blocks you, you "spoof" the MAC address of someone who already has access. You become invisible/authorized. It's a basic trick to bypass physical access controls.</p>
+                <h3>Shodan</h3>
+                <p class="lang-cz">"Google pro zařízení." Vyhledá servery, kamery a routery na internetu. <em>Pravidlo:</em> Jen se dívám, neútočím!</p>
+                <p class="lang-en">"Google for devices." Finds servers, cameras, and routers on the internet. <em>Rule:</em> Look, don't touch!</p>
             </div>
 
             <div class="info-box">
-                <h3>2. IPv4 vs. IPv6 (Tvoje „Příležitost“)</h3>
-                <p class="lang-cz"><strong>IPv4</strong> je staré a adresy došly. <strong>IPv6</strong> je nové a adres je tam nekonečno.<br>
-                <em>Proč tě to zajímá:</em> Většina „starých“ hackerů umí hackovat jen IPv4. Sítě na IPv6 jsou často mizerně zabezpečené, protože se v nich lidé nevyznají. Kdo se naučí bezpečnost IPv6, bude mít v budoucnu víc práce a víc peněz, protože to bude vzácná dovednost.</p>
-                <p class="lang-en"><strong>IPv4</strong> is old and addresses ran out. <strong>IPv6</strong> is new and has infinite addresses.<br>
-                <em>Why it matters:</em> Most "old-school" hackers only know how to hack IPv4. IPv6 networks are often poorly secured because people don't understand them. Those who learn IPv6 security will have more work and money in the future, as it's a rare skill.</p>
-            </div>
-
-            <div class="info-box">
-                <h3>3. Proč to celé nečíst jako učebnici?</h3>
-                <p class="lang-cz">Hacking je jako stavebnice LEGO. Když znáš dílky (IP, MAC, protokoly), víš, jak je spojit dohromady a postavit z nich „zbraň“ (exploit). Když je neznáš, budeš jen slepě kopírovat příkazy z internetu. A jakmile narazíš na něco, co není přesně podle návodu, skončíš.</p>
-                <p class="lang-en">Hacking is like LEGO. When you know the pieces (IP, MAC, protocols), you know how to connect them to build a "weapon" (exploit). If you don't know them, you will just blindly copy commands from the internet. And once you encounter something that isn't exactly as the tutorial says, you're done.</p>
+                <h3>VirusTotal</h3>
+                <p class="lang-cz">Skenuje soubory a odkazy. Řekne mi, jestli je to virus, dřív než na to kliknu.</p>
+                <p class="lang-en">Scans files and URLs. Tells me if it's a virus before I click.</p>
             </div>
         </div>
 
         <div id="ctf" class="section">
             <h1 class="lang-cz">> CTF ZÁPISKY</h1>
             <h1 class="lang-en">> CTF NOTES</h1>
-            <p class="lang-cz">Tady budu přidávat své úspěchy.</p>
-            <p class="lang-en">Achievements will be added here.</p>
         </div>
     </main>
 
