@@ -26,6 +26,7 @@
             <li onclick="showSection('home')">> HOME</li>
             <li onclick="showSection('hack')">> HACK (Knowledge)</li>
             <li onclick="showSection('linux')">> LINUX CMD</li>
+            <li onclick="showSection('tools')">> TOOLS (OSINT)</li>
             <li onclick="showSection('ctf')">> CTF</li>
         </ul>
     </nav>
@@ -38,31 +39,62 @@
 
         <div id="hack" class="section">
             <h1>> HACKING MODUL</h1>
+            
             <div class="info-box">
-                <h3>1. IP vs MAC</h3>
-                <p><strong>IP:</strong> Logická adresa (mění se). <strong>MAC:</strong> Fyzická adresa (otisk prstu).</p>
+                <h3>1. IP vs MAC (Navigace)</h3>
+                <p class="lang-cz"><strong>IP (Logická):</strong> Adresa bytu. Může se měnit. <em>Proč:</em> Potřebuji vědět, kde jsem. Cíl: z veřejného internetu do soukromé sítě.<br><strong>MAC (Fyzická):</strong> Rodné číslo/otisk prstu. <em>Trik:</em> MAC Spoofing (obejdu filtry, vydávám se za autorizovaného).</p>
+                <p class="lang-en"><strong>IP (Logical):</strong> Home address. Can change. <em>Why:</em> Need to know where I am. Goal: from public to private network.<br><strong>MAC (Physical):</strong> ID number/fingerprint. <em>Trick:</em> MAC Spoofing (bypass filters, pretend to be authorized).</p>
             </div>
+
             <div class="info-box">
-                <h3>2. Research</h3>
-                <p><strong>CVE:</strong> ID chyby. <strong>PoC:</strong> Důkaz chyby (pozor na malware!).</p>
+                <h3>2. IPv4 vs. IPv6 (Příležitost)</h3>
+                <p class="lang-cz"><strong>IPv4:</strong> Staré, adresy došly. <strong>IPv6:</strong> Nekonečno adres. <em>Příležitost:</em> Nikdo to neumí zabezpečit, tam jsou peníze.</p>
+                <p class="lang-en"><strong>IPv4:</strong> Old, addresses ran out. <strong>IPv6:</strong> Infinite addresses. <em>Opportunity:</em> Nobody knows how to secure it, that's where the money is.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>3. Hacking jako LEGO</h3>
+                <p class="lang-cz">Znám dílky (IP, MAC, protokoly) = postavím exploit. Neznám = kopíruju návody a skončím.</p>
+                <p class="lang-en">Know pieces (IP, MAC, protocols) = build exploit. Don't know = copy tutorials and fail.</p>
+            </div>
+            
+            <div class="info-box">
+                <h3>4. Research (CVE & PoC)</h3>
+                <p class="lang-cz"><strong>CVE:</strong> Rodný list chyby. <strong>PoC:</strong> Důkaz chyby (pozor na malware!). <strong>MAN pages:</strong> Bible Linuxu.</p>
+                <p class="lang-en"><strong>CVE:</strong> Vulnerability birth certificate. <strong>PoC:</strong> Vulnerability proof (watch for malware!). <strong>MAN pages:</strong> Linux Bible.</p>
             </div>
         </div>
 
         <div id="linux" class="section">
-            <h1>> LINUX POWER COMMANDS</h1>
+            <h1>> LINUX COMMANDS</h1>
             <div class="info-box">
-                <h3>Vyhledávání a filtrace</h3>
-                <p><code>find -name "soubor.txt"</code> - Najde soubor podle jména kdekoliv ve složce.</p>
-                <p><code>grep "text" soubor.log</code> - Najde konkrétní text uvnitř souboru (třeba flagy!).</p>
-                <p><code>grep -R "text" /cesta/</code> - Hledá rekurzivně (všude ve všech složkách).</p>
-                <p><code>wc -l soubor.log</code> - Spočítá řádky v souboru.</p>
+                <code>ls</code> - Listing<br>
+                <code>cd</code> - Change Directory<br>
+                <code>cat</code> - Concatenate (Read file)<br>
+                <code>pwd</code> - Print Working Directory<br>
+                <code>find -name "file"</code> - Search for file<br>
+                <code>grep "text" file</code> - Search for text in file
+            </div>
+        </div>
+
+        <div id="tools" class="section">
+            <h1>> TOOLS (OSINT)</h1>
+            <div class="info-box">
+                <h3>Shodan</h3>
+                <p class="lang-cz">"Google pro zařízení." Vyhledá servery, kamery na internetu. Jen se dívám!</p>
+                <p class="lang-en">"Google for devices." Finds servers, cameras on the internet. Look only!</p>
+            </div>
+            <div class="info-box">
+                <h3>VirusTotal</h3>
+                <p class="lang-cz">Skenuje soubory/URL. Řekne mi, jestli je to virus.</p>
+                <p class="lang-en">Scans files/URL. Tells me if it's a virus.</p>
             </div>
         </div>
 
         <div id="ctf" class="section">
-            <h1 class="lang-cz">> CTF ZÁPISKY</h1>
-            <h1 class="lang-en">> CTF NOTES</h1>
-            <p><strong>Linux Fundamentals:</strong> Použil jsem <code>grep</code> k nalezení flagu v logu.</p>
+            <h1>> CTF ZÁPISKY</h1>
+            <p class="lang-cz">Zde jsou moje flagy a postupy.</p>
+            <p class="lang-en">My flags and write-ups.</p>
         </div>
     </main>
 
