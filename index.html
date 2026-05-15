@@ -12,8 +12,8 @@
         main { padding: 40px; width: 100%; max-width: 800px; }
         .section { display: none; }
         .active { display: block; }
-        .info-box { border: 1px solid #444; padding: 20px; margin: 10px 0; background: #111; }
-        code { background: #1a1a1a; padding: 10px; color: #ff9900; display: block; margin: 10px 0; }
+        .info-box { border: 1px solid #444; padding: 20px; margin: 10px 0; background: #111; line-height: 1.6; }
+        code { background: #1a1a1a; padding: 10px; color: #ff9900; display: block; margin: 10px 0; border-left: 3px solid #ff9900; }
         .lang-en { display: none; }
     </style>
 </head>
@@ -31,32 +31,38 @@
     </nav>
 
     <main>
-        <div id="home" class="section active"><h1>> VÍTEJ V SYSTÉMU</h1></div>
+        <div id="home" class="section active">
+            <h1 class="lang-cz">> VÍTEJ V SYSTÉMU</h1>
+            <h1 class="lang-en">> SYSTEM WELCOME</h1>
+        </div>
 
         <div id="hack" class="section">
-            <h1>> HACKING ZÁKLADY</h1>
+            <h1>> HACKING MODUL</h1>
             <div class="info-box">
                 <h3>1. IP vs MAC</h3>
-                <p><strong>IP:</strong> Logická (jako adresa). <strong>MAC:</strong> Fyzická (otisk prstu). <em>Trik:</em> MAC Spoofing.</p>
+                <p><strong>IP:</strong> Logická adresa (mění se). <strong>MAC:</strong> Fyzická adresa (otisk prstu).</p>
+            </div>
+            <div class="info-box">
+                <h3>2. Research</h3>
+                <p><strong>CVE:</strong> ID chyby. <strong>PoC:</strong> Důkaz chyby (pozor na malware!).</p>
             </div>
         </div>
 
-        <!-- NOVÁ SEKCE PRO LINUX -->
         <div id="linux" class="section">
-            <h1 class="lang-cz">> LINUX COMMANDS</h1>
-            <h1 class="lang-en">> LINUX COMMANDS</h1>
+            <h1>> LINUX POWER COMMANDS</h1>
             <div class="info-box">
-                <h3>Základní příkazy (Hacker's Toolbox)</h3>
-                <p><code>ls</code> - Výpis souborů (Listing).<br>
-                <code>cd</code> - Změna složky (Change Directory).<br>
-                <code>cat</code> - Čtení obsahu souboru (Concatenate).<br>
-                <code>pwd</code> - Kde sakra jsem? (Print Working Directory).</p>
+                <h3>Vyhledávání a filtrace</h3>
+                <p><code>find -name "soubor.txt"</code> - Najde soubor podle jména kdekoliv ve složce.</p>
+                <p><code>grep "text" soubor.log</code> - Najde konkrétní text uvnitř souboru (třeba flagy!).</p>
+                <p><code>grep -R "text" /cesta/</code> - Hledá rekurzivně (všude ve všech složkách).</p>
+                <p><code>wc -l soubor.log</code> - Spočítá řádky v souboru.</p>
             </div>
         </div>
 
         <div id="ctf" class="section">
-            <h1>> CTF ZÁPISKY</h1>
-            <p>Aktuálně řeším: Linux Fundamentals.</p>
+            <h1 class="lang-cz">> CTF ZÁPISKY</h1>
+            <h1 class="lang-en">> CTF NOTES</h1>
+            <p><strong>Linux Fundamentals:</strong> Použil jsem <code>grep</code> k nalezení flagu v logu.</p>
         </div>
     </main>
 
