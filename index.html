@@ -8,7 +8,7 @@
         nav { width: 220px; height: 100vh; border-right: 2px solid #00ff41; padding: 20px; }
         nav ul { list-style: none; padding: 0; }
         nav li { margin: 15px 0; cursor: pointer; color: #00ff41; font-weight: bold; }
-        .lang-btn { cursor: pointer; color: #ff9900; margin-right: 5px; }
+        .lang-btn { cursor: pointer; color: #ff9900; font-weight: bold; margin-right: 5px; border: 1px solid #ff9900; padding: 2px 5px; }
         main { padding: 40px; width: 100%; max-width: 800px; }
         .section { display: none; }
         .active { display: block; }
@@ -21,7 +21,10 @@
 
     <nav>
         <h2>MENU</h2>
-        <div><span class="lang-btn" onclick="setLang('cz')">[ CZ ]</span> <span class="lang-btn" onclick="setLang('en')">[ EN ]</span></div>
+        <div style="margin-bottom: 20px;">
+            <span class="lang-btn" onclick="setLang('cz')">CZ</span>
+            <span class="lang-btn" onclick="setLang('en')">EN</span>
+        </div>
         <ul>
             <li onclick="showSection('home')">> HOME</li>
             <li onclick="showSection('hack')">> HACK (Knowledge)</li>
@@ -39,41 +42,40 @@
 
         <div id="hack" class="section">
             <h1>> HACKING MODUL</h1>
-            
             <div class="info-box">
                 <h3>1. IP vs MAC (Navigace)</h3>
-                <p class="lang-cz"><strong>IP (Logická):</strong> Adresa bytu. Může se měnit. <em>Proč:</em> Potřebuji vědět, kde jsem. Cíl: z veřejného internetu do soukromé sítě.<br><strong>MAC (Fyzická):</strong> Rodné číslo/otisk prstu. <em>Trik:</em> MAC Spoofing (obejdu filtry, vydávám se za autorizovaného).</p>
-                <p class="lang-en"><strong>IP (Logical):</strong> Home address. Can change. <em>Why:</em> Need to know where I am. Goal: from public to private network.<br><strong>MAC (Physical):</strong> ID number/fingerprint. <em>Trick:</em> MAC Spoofing (bypass filters, pretend to be authorized).</p>
+                <p class="lang-cz"><strong>IP:</strong> Logická (adresa bytu). Může se měnit. <strong>MAC:</strong> Fyzická (otisk prstu). <em>Trik:</em> MAC Spoofing (vydávám se za autorizovaného).</p>
+                <p class="lang-en"><strong>IP:</strong> Logical (home address). Can change. <strong>MAC:</strong> Physical (fingerprint). <em>Trick:</em> MAC Spoofing (pretend to be authorized).</p>
             </div>
-
             <div class="info-box">
                 <h3>2. IPv4 vs. IPv6 (Příležitost)</h3>
-                <p class="lang-cz"><strong>IPv4:</strong> Staré, adresy došly. <strong>IPv6:</strong> Nekonečno adres. <em>Příležitost:</em> Nikdo to neumí zabezpečit, tam jsou peníze.</p>
-                <p class="lang-en"><strong>IPv4:</strong> Old, addresses ran out. <strong>IPv6:</strong> Infinite addresses. <em>Opportunity:</em> Nobody knows how to secure it, that's where the money is.</p>
+                <p class="lang-cz"><strong>IPv4:</strong> Staré. <strong>IPv6:</strong> Nekonečno adres. <em>Příležitost:</em> Slabé zabezpečení = šance pro hackery.</p>
+                <p class="lang-en"><strong>IPv4:</strong> Old. <strong>IPv6:</strong> Infinite addresses. <em>Opportunity:</em> Weak security = chance for hackers.</p>
             </div>
-
             <div class="info-box">
                 <h3>3. Hacking jako LEGO</h3>
-                <p class="lang-cz">Znám dílky (IP, MAC, protokoly) = postavím exploit. Neznám = kopíruju návody a skončím.</p>
-                <p class="lang-en">Know pieces (IP, MAC, protocols) = build exploit. Don't know = copy tutorials and fail.</p>
+                <p class="lang-cz">Znám dílky (IP, MAC, protokoly) = postavím exploit. Neznám = kopíruju a skončím.</p>
+                <p class="lang-en">Know the pieces (IP, MAC, protocols) = build exploit. Don't know = copy tutorials and fail.</p>
             </div>
-            
             <div class="info-box">
                 <h3>4. Research (CVE & PoC)</h3>
-                <p class="lang-cz"><strong>CVE:</strong> Rodný list chyby. <strong>PoC:</strong> Důkaz chyby (pozor na malware!). <strong>MAN pages:</strong> Bible Linuxu.</p>
-                <p class="lang-en"><strong>CVE:</strong> Vulnerability birth certificate. <strong>PoC:</strong> Vulnerability proof (watch for malware!). <strong>MAN pages:</strong> Linux Bible.</p>
+                <p class="lang-cz"><strong>CVE:</strong> ID chyby. <strong>PoC:</strong> Důkaz (pozor na malware!). <strong>MAN pages:</strong> Linux Bible.</p>
+                <p class="lang-en"><strong>CVE:</strong> Vulnerability ID. <strong>PoC:</strong> Vulnerability proof (watch out for malware!). <strong>MAN pages:</strong> Linux Bible.</p>
             </div>
         </div>
 
         <div id="linux" class="section">
-            <h1>> LINUX COMMANDS</h1>
+            <h1>> LINUX POWER COMMANDS</h1>
             <div class="info-box">
-                <code>ls</code> - Listing<br>
+                <code>ls</code> - List files<br>
                 <code>cd</code> - Change Directory<br>
-                <code>cat</code> - Concatenate (Read file)<br>
+                <code>cat</code> - Read content (concatenate)<br>
                 <code>pwd</code> - Print Working Directory<br>
-                <code>find -name "file"</code> - Search for file<br>
-                <code>grep "text" file</code> - Search for text in file
+                <code>find -name "file"</code> - Search for files<br>
+                <code>grep "text" file</code> - Search text inside file<br>
+                <code>grep -R "text"</code> - Recursive search<br>
+                <code>wc -l</code> - Count lines<br>
+                <code>man</code> - Manual (Linux Bible)
             </div>
         </div>
 
@@ -81,13 +83,13 @@
             <h1>> TOOLS (OSINT)</h1>
             <div class="info-box">
                 <h3>Shodan</h3>
-                <p class="lang-cz">"Google pro zařízení." Vyhledá servery, kamery na internetu. Jen se dívám!</p>
-                <p class="lang-en">"Google for devices." Finds servers, cameras on the internet. Look only!</p>
+                <p class="lang-cz">"Google pro zařízení." Vyhledá servery, kamery na internetu.</p>
+                <p class="lang-en">"Google for devices." Finds servers, cameras on the internet.</p>
             </div>
             <div class="info-box">
                 <h3>VirusTotal</h3>
-                <p class="lang-cz">Skenuje soubory/URL. Řekne mi, jestli je to virus.</p>
-                <p class="lang-en">Scans files/URL. Tells me if it's a virus.</p>
+                <p class="lang-cz">Skenuje soubory a URL. Odhalí viry před stažením.</p>
+                <p class="lang-en">Scans files and URLs. Reveals viruses before downloading.</p>
             </div>
         </div>
 
