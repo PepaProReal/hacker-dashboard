@@ -2,109 +2,97 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Hacker Dashboard</title>
+    <title>Hacker Dashboard | Professional Structure</title>
     <style>
-        body { background-color: #0d0d0d; color: #00ff41; font-family: 'Courier New', Courier, monospace; margin: 0; display: flex; }
-        nav { width: 220px; height: 100vh; border-right: 2px solid #00ff41; padding: 20px; }
+        /* Modern Dark Theme (podobný jako máš v React projektu) */
+        body { background-color: #0d0d0d; color: #a0a0a0; font-family: 'Inter', sans-serif; margin: 0; display: flex; }
+        
+        /* Sidebar Component */
+        nav { width: 250px; height: 100vh; border-right: 1px solid #333; padding: 30px; background: #090909; }
+        nav h2 { color: #00ff41; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; }
         nav ul { list-style: none; padding: 0; }
-        nav li { margin: 15px 0; cursor: pointer; color: #00ff41; font-weight: bold; }
-        .lang-btn { cursor: pointer; color: #ff9900; font-weight: bold; margin-right: 5px; border: 1px solid #ff9900; padding: 2px 5px; }
-        main { padding: 40px; width: 100%; max-width: 800px; }
+        nav li { margin: 20px 0; cursor: pointer; color: #fff; font-weight: 500; transition: 0.3s; }
+        nav li:hover { color: #00ff41; }
+        
+        /* Main Container */
+        main { padding: 50px; width: 100%; max-width: 900px; }
         .section { display: none; }
         .active { display: block; }
-        .info-box { border: 1px solid #444; padding: 20px; margin: 10px 0; background: #111; line-height: 1.6; }
-        code { background: #1a1a1a; padding: 10px; color: #ff9900; display: block; margin: 10px 0; border-left: 3px solid #ff9900; }
+        
+        /* Card Component */
+        .card { border: 1px solid #222; padding: 25px; margin-bottom: 20px; background: #111; border-radius: 8px; }
+        h3 { color: #00ff41; margin-top: 0; }
+        code { background: #000; padding: 10px; color: #ff9900; display: block; margin: 15px 0; border-radius: 4px; border-left: 3px solid #ff9900; }
+        
         .lang-en { display: none; }
     </style>
 </head>
 <body>
 
+    <!-- Sidebar Navigation -->
     <nav>
-        <h2>MENU</h2>
-        <div style="margin-bottom: 20px;">
-            <span class="lang-btn" onclick="setLang('cz')">CZ</span>
-            <span class="lang-btn" onclick="setLang('en')">EN</span>
+        <h2>HACKER.OS</h2>
+        <div style="margin-bottom: 30px;">
+            <span class="lang-btn" onclick="setLang('cz')" style="cursor:pointer; color:#00ff41;">[CZ]</span> 
+            <span class="lang-btn" onclick="setLang('en')" style="cursor:pointer; color:#00ff41;">[EN]</span>
         </div>
         <ul>
-            <li onclick="showSection('home')">> HOME</li>
-            <li onclick="showSection('hack')">> HACK (Knowledge)</li>
-            <li onclick="showSection('linux')">> LINUX CMD</li>
-            <li onclick="showSection('tools')">> TOOLS (OSINT)</li>
-            <li onclick="showSection('ctf')">> CTF</li>
+            <li onclick="showSection('home')">> Home</li>
+            <li onclick="showSection('hack')">> Knowledge Base</li>
+            <li onclick="showSection('linux')">> Linux CMD</li>
+            <li onclick="showSection('tools')">> Tools (OSINT)</li>
         </ul>
     </nav>
 
+    <!-- Main Content Area -->
     <main>
-        <div id="home" class="section active">
-            <h1 class="lang-cz">> VÍTEJ V SYSTÉMU</h1>
-            <h1 class="lang-en">> SYSTEM WELCOME</h1>
-        </div>
+        <section id="home" class="section active">
+            <h1>Dashboard</h1>
+            <p class="lang-cz">Vítej v zabezpečeném portálu.</p>
+            <p class="lang-en">Welcome to the secure portal.</p>
+        </section>
 
-        <div id="hack" class="section">
-            <h1>> HACKING MODUL</h1>
-            <div class="info-box">
-                <h3>1. IP vs MAC (Navigace)</h3>
-                <p class="lang-cz"><strong>IP:</strong> Logická (adresa bytu). Může se měnit. <strong>MAC:</strong> Fyzická (otisk prstu). <em>Trik:</em> MAC Spoofing (vydávám se za autorizovaného).</p>
-                <p class="lang-en"><strong>IP:</strong> Logical (home address). Can change. <strong>MAC:</strong> Physical (fingerprint). <em>Trick:</em> MAC Spoofing (pretend to be authorized).</p>
+        <!-- Hacking Knowledge Component -->
+        <section id="hack" class="section">
+            <h1>Hacking Knowledge</h1>
+            <div class="card">
+                <h3>IP vs MAC</h3>
+                <p><strong>IP:</strong> Logical address (temporary). <strong>MAC:</strong> Physical address (fingerprint). <em>Trick:</em> MAC Spoofing.</p>
             </div>
-            <div class="info-box">
-                <h3>2. IPv4 vs. IPv6 (Příležitost)</h3>
-                <p class="lang-cz"><strong>IPv4:</strong> Staré. <strong>IPv6:</strong> Nekonečno adres. <em>Příležitost:</em> Slabé zabezpečení = šance pro hackery.</p>
-                <p class="lang-en"><strong>IPv4:</strong> Old. <strong>IPv6:</strong> Infinite addresses. <em>Opportunity:</em> Weak security = chance for hackers.</p>
+            <div class="card">
+                <h3>Research (CVE & PoC)</h3>
+                <p><strong>CVE:</strong> Vulnerability ID. <strong>PoC:</strong> Vulnerability proof. <strong>MAN pages:</strong> Linux Manual.</p>
             </div>
-            <div class="info-box">
-                <h3>3. Hacking jako LEGO</h3>
-                <p class="lang-cz">Znám dílky (IP, MAC, protokoly) = postavím exploit. Neznám = kopíruju a skončím.</p>
-                <p class="lang-en">Know the pieces (IP, MAC, protocols) = build exploit. Don't know = copy tutorials and fail.</p>
-            </div>
-            <div class="info-box">
-                <h3>4. Research (CVE & PoC)</h3>
-                <p class="lang-cz"><strong>CVE:</strong> ID chyby. <strong>PoC:</strong> Důkaz (pozor na malware!). <strong>MAN pages:</strong> Linux Bible.</p>
-                <p class="lang-en"><strong>CVE:</strong> Vulnerability ID. <strong>PoC:</strong> Vulnerability proof (watch out for malware!). <strong>MAN pages:</strong> Linux Bible.</p>
-            </div>
-        </div>
+        </section>
 
-        <div id="linux" class="section">
-            <h1>> LINUX POWER COMMANDS</h1>
-            <div class="info-box">
-                <code>ls</code> - List files<br>
-                <code>cd</code> - Change Directory<br>
-                <code>cat</code> - Read content (concatenate)<br>
-                <code>pwd</code> - Print Working Directory<br>
-                <code>find -name "file"</code> - Search for files<br>
-                <code>grep "text" file</code> - Search text inside file<br>
-                <code>grep -R "text"</code> - Recursive search<br>
-                <code>wc -l</code> - Count lines<br>
-                <code>man</code> - Manual (Linux Bible)
+        <!-- Linux CMD Component -->
+        <section id="linux" class="section">
+            <h1>Linux Commands</h1>
+            <div class="card">
+                <h3>Basic Operations</h3>
+                <code>ls | cd | cat | pwd</code>
+                <h3>Search & Redirect</h3>
+                <code>grep "THM" file.log | find -name "*.txt" | echo "data" >> file</code>
             </div>
-        </div>
+        </section>
 
-        <div id="tools" class="section">
-            <h1>> TOOLS (OSINT)</h1>
-            <div class="info-box">
-                <h3>Shodan</h3>
-                <p class="lang-cz">"Google pro zařízení." Vyhledá servery, kamery na internetu.</p>
-                <p class="lang-en">"Google for devices." Finds servers, cameras on the internet.</p>
+        <!-- Tools Component -->
+        <section id="tools" class="section">
+            <h1>OSINT Tools</h1>
+            <div class="card">
+                <h3>Shodan & VirusTotal</h3>
+                <p>Google for devices & Virus Scanner.</p>
             </div>
-            <div class="info-box">
-                <h3>VirusTotal</h3>
-                <p class="lang-cz">Skenuje soubory a URL. Odhalí viry před stažením.</p>
-                <p class="lang-en">Scans files and URLs. Reveals viruses before downloading.</p>
-            </div>
-        </div>
-
-        <div id="ctf" class="section">
-            <h1>> CTF ZÁPISKY</h1>
-            <p class="lang-cz">Zde jsou moje flagy a postupy.</p>
-            <p class="lang-en">My flags and write-ups.</p>
-        </div>
+        </section>
     </main>
 
     <script>
+        // Router Logic (Přepínání sekcí)
         function showSection(id) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
         }
+        // Language Logic (Internacionalizace)
         function setLang(lang) {
             const cz = document.querySelectorAll('.lang-cz');
             const en = document.querySelectorAll('.lang-en');
